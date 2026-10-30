@@ -1,0 +1,2 @@
+- `prompts/gamma-platform-proposal/current/gamma-platform-proposal-generation-v1.md` — stub — no prompt content yet; wrap as a skill once the Notion page has a prompt body
+- `prompts/outbound-sales-machine/current/outbound-sales-machine-v1.md` — stub — no prompt content yet; wrap as a skill once the Notion page has a prompt body

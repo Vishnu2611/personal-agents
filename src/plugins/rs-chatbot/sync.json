@@ -1,0 +1,6 @@
+{
+  "prompts": {
+    "chatbot-personality-rulebook": "prompts/chatbot-personality-rulebook/current/chatbot-personality-rulebook-v1.md",
+    "chatbot-behaviour-and-fallback": "prompts/chatbot-behaviour-and-fallback/current/chatbot-behaviour-and-fallback-v1.md"
+  }
+}

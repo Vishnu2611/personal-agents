@@ -1,0 +1,8 @@
+# Orchestrator dependencies.
+# Path A (Agent SDK — runs the local skills in your process / Claude Code):
+claude-agent-sdk>=0.1.0      # Python 3.10+. TS equivalent: @anthropic-ai/claude-agent-sdk
+
+# Path B (Managed Agents — hosted on platform.claude.com, BETA):
+anthropic>=0.40.0            # use the version that ships the beta.agents / beta.sessions resources
+
+pyyaml>=6.0

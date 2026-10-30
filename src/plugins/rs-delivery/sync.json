@@ -1,0 +1,7 @@
+{
+  "prompts": { "spec-generator": "prompts/08-spec-generator/current/spec-generator-v4.md" },
+  "copy": [
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/spec-generator/resources/document-formatting-standard.md" },
+    { "from": "src/plugins/rs-delivery/.mcp.json", "to": ".mcp.json" }
+  ]
+}

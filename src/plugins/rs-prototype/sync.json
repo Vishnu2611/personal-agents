@@ -1,0 +1,11 @@
+{
+  "prompts": {
+    "rightshift-propel": "prompts/rightshift-propel/current/rightshift-propel-v1.md",
+    "prototype-to-mvp-feature-generation": "prompts/prototype-to-mvp-feature-generation/current/prototype-to-mvp-feature-generation-v1.md",
+    "rightshift-spark": "prompts/rightshift-spark/current/rightshift-spark-v1.md",
+    "html-prototype-generator": "prompts/html-prototype-generator/current/html-prototype-generator-v1.md",
+    "prototype-feature-audit-and-ideation": "prompts/prototype-feature-audit-and-ideation/current/prototype-feature-audit-and-ideation-v1.md",
+    "rightshift-feature-generator": "prompts/rightshift-feature-generator/current/rightshift-feature-generator-v1.md",
+    "nextjs-prototype-generator": "prompts/nextjs-prototype-generator/current/nextjs-prototype-generator-v4.md"
+  }
+}

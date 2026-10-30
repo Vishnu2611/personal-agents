@@ -1,0 +1,76 @@
+{
+  "name": "Ask Acme HR",
+  "slug": "ask-acme-hr",
+  "domain": "ask-hr.acme.internal",
+
+  "audience": "internal",
+  "access": "password",
+
+  "model": "claude-sonnet-4-6",
+  "maxTokens": 1500,
+
+  "source": {
+    "kind": "notion",
+    "ref": "https://www.notion.so/acme/HR-Handbook-2026",
+    "mode": "snapshot",
+    "pulledAt": "2026-07-01"
+  },
+
+  "mustNotGetWrong": [
+    "PTO accrual rate and carryover cap",
+    "Health plan enrollment deadlines",
+    "Parental leave duration and pay percentage",
+    "401(k) match formula"
+  ],
+
+  "escalation": {
+    "human": "Priya Nair, HR Business Partner",
+    "link": "https://calendly.com/priya-nair-acme/30min"
+  },
+
+  "team": [
+    { "name": "Priya Nair", "role": "HR Business Partner", "email": "priya.nair@acme.com", "avatar": "/team/priya.jpg" },
+    { "name": "Devon Marsh", "role": "Benefits Lead", "email": "devon.marsh@acme.com", "avatar": "/team/devon.jpg" }
+  ],
+
+  "ui": {
+    "title": "Ask Acme HR",
+    "subtitle": "Answers straight from the current HR handbook",
+    "starterQuestions": [
+      "How much PTO do I accrue per pay period?",
+      "When does open enrollment close this year?",
+      "What's the 401(k) match formula?"
+    ],
+    "theme": "rightshift",
+    "welcomeMessage": "Hi, I'm the Acme HR assistant. Ask me anything about PTO, benefits, or leave policy — I'll point you to a person if it's not something I can answer from the handbook.",
+    "composerPlaceholder": "Ask about PTO, benefits, leave..."
+  },
+
+  "theme": {
+    "font": "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap",
+    "logoMark": "AH",
+    "logoImage": "/logo.svg",
+    "badge": "Internal only",
+    "ctaLabel": "Ask HR",
+    "teamLabel": "HR Team",
+    "assistantLabel": "HR Assistant",
+    "commonQuestionsLabel": "Common Questions",
+    "disclaimer": "Answers are drawn from the 2026 HR handbook snapshot and may not reflect policy changes made after 2026-07-01. For anything binding, confirm with HR.",
+    "colors": {
+      "bg": "#faf6ee",
+      "panel": "#ffffff",
+      "paper": "#ffffff",
+      "ink": "#1a1d24",
+      "inkSoft": "#5b5953",
+      "inkFaint": "#8a877f",
+      "accent": "#6B2BD9",
+      "accentDeep": "#4A1F9E",
+      "rule": "#e8e2d4"
+    }
+  },
+
+  "prompts": {
+    "system": "config/system-prompt.md",
+    "knowledgeBase": "config/knowledge-base.md"
+  }
+}

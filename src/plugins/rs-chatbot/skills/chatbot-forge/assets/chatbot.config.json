@@ -1,0 +1,69 @@
+{
+  "name": "Ask Example",
+  "slug": "ask-example",
+  "domain": "ask.example.com",
+
+  "audience": "public | members | internal",
+  "access": "open | password",
+
+  "model": "claude-sonnet-4-6",
+  "maxTokens": 1500,
+
+  "source": {
+    "kind": "notion | drive | files",
+    "ref": "URL or folder path — exactly one",
+    "mode": "snapshot | live",
+    "pulledAt": null
+  },
+
+  "mustNotGetWrong": [
+    "list the facts where a confident wrong answer is a real problem",
+    "each one becomes a Phase 3 test case"
+  ],
+
+  "escalation": {
+    "human": "Name",
+    "link": "https://calendly.com/... or a Slack channel"
+  },
+
+  "team": [
+    { "name": "", "role": "", "email": "", "avatar": null }
+  ],
+
+  "ui": {
+    "title": "Ask Example",
+    "subtitle": "",
+    "starterQuestions": [],
+    "theme": "rightshift",
+    "welcomeMessage": "",
+    "composerPlaceholder": ""
+  },
+
+  "theme": {
+    "font": "",
+    "logoMark": "",
+    "logoImage": null,
+    "badge": null,
+    "ctaLabel": null,
+    "teamLabel": "Team",
+    "assistantLabel": "",
+    "commonQuestionsLabel": "Common Questions",
+    "disclaimer": null,
+    "colors": {
+      "bg": "",
+      "panel": "",
+      "paper": "",
+      "ink": "",
+      "inkSoft": "",
+      "inkFaint": "",
+      "accent": "",
+      "accentDeep": "",
+      "rule": ""
+    }
+  },
+
+  "prompts": {
+    "system": "config/system-prompt.md",
+    "knowledgeBase": "config/knowledge-base.md"
+  }
+}

@@ -1,0 +1,37 @@
+# How the generator, the verifier (#1), and the feedback loop (#2) play together.
+# Two loops at two speeds. Plain "\n" labels (D2 measures them reliably).
+direction: down
+
+classes: {
+  gen:   { style: { fill: "#e8f0fe"; stroke: "#3b6fd6"; stroke-width: 3; border-radius: 12; font-size: 16 } }
+  check: { style: { fill: "#fff4e5"; stroke: "#d97706"; stroke-width: 2; border-radius: 12; font-size: 15 } }
+  human: { style: { fill: "#e7f6ec"; stroke: "#16a34a"; stroke-width: 2; border-radius: 12; font-size: 15 } }
+  loop:  { style: { fill: "#f6e9fe"; stroke: "#9333ea"; stroke-width: 3; border-radius: 12; font-size: 15 } }
+  shared:{ style: { fill: "#fef9c3"; stroke: "#ca8a04"; stroke-width: 2; border-radius: 10; font-size: 14; font-color: "#713f12" } }
+  ship:  { style: { fill: "#dcfce7"; stroke: "#15803d"; stroke-width: 2; border-radius: 999; font-size: 15 } }
+}
+
+gen: "GENERATOR\n(your BRD / PRD / Estimation prompt)\nwrites a draft" { class: gen }
+ver: "VERIFIER  (#1)\nscores the draft against the checklist\nBEFORE any human sees it" { class: check }
+human: "HUMAN REVIEW\nedits the draft into the final version\n(your phase checkpoints)" { class: human }
+ship: "✅ FINAL DOC ships" { class: ship }
+loop: "FEEDBACK LOOP  (#2)\ncompares AI draft vs human's final,\nacross many docs → finds repeating edits" { class: loop }
+improve: "PROMPT IMPROVEMENT\na proposed edit to the generator prompt\n(you approve it)" { class: loop }
+checklist: "SHARED CHECKLIST\nthe same criteria used by #1 and #2\n(e.g. the PRD's reflection criteria)" { class: shared }
+
+# main flow
+gen -> ver: draft
+ver -> human: "score OK → hand over"
+human -> ship
+
+# FAST LOOP — fixes THIS document, now
+ver -> gen: "score low → regenerate\n(FAST LOOP — same document)" { style.stroke: "#d97706"; style.stroke-width: 3 }
+
+# SLOW LOOP — fixes the GENERATOR, over time
+human -> loop: "the edits the human made" { style.stroke: "#9333ea" }
+loop -> improve
+improve -> gen: "smarter prompt → next doc\nstarts better (SLOW LOOP — over time)" { style.stroke: "#9333ea"; style.stroke-width: 3 }
+
+# the glue
+checklist -> ver: used by { style.stroke-dash: 4; style.stroke: "#ca8a04" }
+checklist -> loop: used by { style.stroke-dash: 4; style.stroke: "#ca8a04" }

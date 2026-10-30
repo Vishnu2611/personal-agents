@@ -1,0 +1,10 @@
+{
+  "name": "rs-design",
+  "version": "4.0.0",
+  "description": "Interface and visual design (SaaS UI in Figma, design reference to CSS spec) and evaluating a page, site or Figma file against its brief. Also brand identity. Not for building it in code.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

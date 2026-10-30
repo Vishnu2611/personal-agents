@@ -1,0 +1,10 @@
+{
+  "name": "rs-content",
+  "version": "4.0.0",
+  "description": "Write what is published under the RightShift name: LinkedIn posts, case studies, traction pieces, speaking-engagement campaigns, one-pagers, editorial and client-communication QA, and the voice guide they follow. Not for client deliverables.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

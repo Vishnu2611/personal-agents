@@ -1,0 +1,27 @@
+{
+  "prompts": {
+    "deep-voice-guide": "prompts/deep-voice-guide/current/deep-voice-guide-v1.md",
+    "case-study-and-testimonial-generator": "prompts/case-study-and-testimonial-generator/current/case-study-and-testimonial-generator-v2.md",
+    "rightshift-traction": "prompts/rightshift-traction/current/rightshift-traction-v1.md",
+    "cross-page-editorial-consistency-audit": "prompts/cross-page-editorial-consistency-audit/current/cross-page-editorial-consistency-audit-v1.md",
+    "follower-ignition": "prompts/follower-ignition/current/follower-ignition-v1.md"
+  },
+  "copy": [
+    {
+      "from": "src/plugins/rs-content/prompts/speaking-engagement/current/speaking-engagement-pitch-deck-generator-phase1.md",
+      "to": "skills/speaking-engagement/resources/speaking-engagement-pitch-deck-generator-phase1.md"
+    },
+    {
+      "from": "src/plugins/rs-content/prompts/speaking-engagement/current/speaking-engagement-pre-event-email-campaign.md",
+      "to": "skills/speaking-engagement/resources/speaking-engagement-pre-event-email-campaign.md"
+    },
+    {
+      "from": "src/plugins/rs-content/prompts/speaking-engagement/current/speaking-engagement-rsvp-contact-enrichment.md",
+      "to": "skills/speaking-engagement/resources/speaking-engagement-rsvp-contact-enrichment.md"
+    },
+    {
+      "from": "src/plugins/rs-content/prompts/speaking-engagement/current/speaking-engagement-post-event-email-campaign.md",
+      "to": "skills/speaking-engagement/resources/speaking-engagement-post-event-email-campaign.md"
+    }
+  ]
+}

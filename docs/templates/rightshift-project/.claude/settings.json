@@ -1,0 +1,18 @@
+{
+  "extraKnownMarketplaces": {
+    "rightshift": {
+      "source": {
+        "source": "github",
+        "repo": "IntuitioLabsLLC/rightshift-managed-agents",
+        "ref": "v4"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "rs-scoping@rightshift": true,
+    "rs-delivery@rightshift": true,
+    "rs-qa@rightshift": true,
+    "rs-common@rightshift": true,
+    "rs-guard@rightshift": true
+  }
+}

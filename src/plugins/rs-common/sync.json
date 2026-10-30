@@ -1,0 +1,5 @@
+{
+  "copy": [
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/document-formatting-standard/resources/document-formatting-standard.md" }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "prompts": {
+    "saas-uiux-designer-figma": "prompts/saas-uiux-designer-figma/current/saas-uiux-designer-figma-v1.1.md",
+    "design-reference-to-css-spec": "prompts/design-reference-to-css-spec/current/design-reference-to-css-spec-v1.md",
+    "figma-page-review-vs-brief": "prompts/figma-page-review-vs-brief/current/figma-page-review-vs-brief-v1.md",
+    "page-design-evaluation-generic": "prompts/page-design-evaluation-generic/current/page-design-evaluation-generic-v1.md",
+    "rightshift-site-design-evaluation": "prompts/rightshift-site-design-evaluation/current/rightshift-site-design-evaluation-v1.md",
+    "rightshift-identity": "prompts/rightshift-identity/current/rightshift-identity-v1.md"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "rs-delivery",
+  "version": "4.0.0",
+  "description": "Ship an approved PRD: per-feature specs a coding agent can execute, then design-briefed, prototype-gated, TDD-implemented, QA-verified features shipped as a PR linked to the ticket. Not for prototypes or deciding what to build.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED",
+  "dependencies": [
+    "mattpocock-skills",
+    "rs-scoping",
+    "rs-guard"
+  ]
+}

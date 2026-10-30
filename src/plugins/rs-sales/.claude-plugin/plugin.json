@@ -1,0 +1,10 @@
+{
+  "name": "rs-sales",
+  "version": "4.0.0",
+  "description": "Win scoped work: proposal and platform decks, startup pitch decks, contracts, outbound campaigns, and review of client-facing material before it goes out. Not for producing the scope.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

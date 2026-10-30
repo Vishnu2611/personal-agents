@@ -1,0 +1,89 @@
+# IntuitioLabs doc-gen pipeline — orchestrator configuration
+#
+# Declarative config for the orchestrating agent that runs BRD -> PRD -> Technical Design ->
+# Estimation, each stage backed by one Agent Skill. This YAML is read by `run_pipeline.py`
+# (Claude Agent SDK). It is the orchestrator's own config — edit it to point at your Notion
+# locations, choose the model, and toggle the human gates.
+#
+# NOTE: the exact deploy artifact platform.claude.com consumes is being confirmed; this file is the
+# stable, editable pipeline definition the runner uses. See README.md for deploy options.
+
+name: rs-docgen-pipeline
+description: >
+  Turns a discovery Opportunity Packet into a contract-ready estimate by chaining four skills, with a
+  human approval gate between stages. Stage N's output is the input to stage N+1.
+
+model: claude-opus-4-8            # set to your preferred model (e.g. claude-sonnet-4-6 for lower cost)
+
+# --- platform.claude.com (Managed Agents, BETA) — used by provision_agent.py + run_pipeline.py ---
+# NOTE: platform.claude.com does NOT consume this YAML directly. It is the runner's config; the
+# runner translates it into Managed Agents API calls. The SDK path (run_pipeline_sdk.py) reads it too.
+platform:
+  beta: "managed-agents-2026-04-01"        # required header on every Managed Agents call (verify current)
+  files_beta: "files-api-2025-04-14"
+  environment:
+    type: cloud
+    networking: unrestricted               # required so the agent can reach the Notion MCP
+  ids_file: ./runs/agent.ids.json          # written by provision_agent.py (agent_id, environment_id)
+  # Upload each skill to your workspace (Console or `ant` CLI), then map folder -> skill_id here:
+  skills:
+    brd-generator: "skill_014NjUMdBJgn2vHbFoGzwHAK"
+    prd-generator: "skill_019BgZaTaSFAK6DyumTkmrJb"
+    technical-design-generator: "skill_01P9Rqjfh68hGu2uFjs7us7y"
+    estimation-generator: "skill_01CKdrbsR8yGkud1rC2WpYiG"
+
+# MCP servers the agent may use (defined in .mcp.json). Notion is the system of record.
+mcp_servers:
+  - notion
+
+# Reference only: generated skills live in ../../plugins/rs-scoping/skills/ (make sync). The SDK runner
+# loads skills from the repo root's .claude/skills, installed by `make install-claude-code`.
+skills_dir: ../../plugins/rs-scoping/skills
+
+# Where stage artifacts are written/read. With Notion, set write_back to push outputs to the hub.
+workdir: ./runs
+notion:
+  mcp_url: "https://mcp.notion.com/mcp"
+  vault_id: "vcrd_01HommSBdUtgYx7BoykRa2LJ"
+  opportunities_db: "https://app.notion.com/p/intuitiolabs/32eb19fdbedb80a7bddce8a64dcd9650?v=32eb19fdbedb80ee8917000cd2875da2"
+  # A fresh project hub is created automatically at the start of each run by duplicating this template
+  # (via the Notion MCP). The new page becomes the write-back destination for stage outputs.
+  project_hub_template: "https://app.notion.com/p/intuitiolabs/ResQ-Structured-Project-Hub-335b19fdbedb8036bc00ccaef5e6c80f"
+  project_hub: ""                 # leave blank to auto-create from the template; or paste an existing url/id to reuse
+  write_back: true                # true -> write each stage's output to the project hub via Notion MCP
+
+# The pipeline. Each stage runs its skill; `inputs` are prior artifacts (+ the initial packet);
+# `human_gate: true` pauses for review/approval before the next stage starts.
+stages:
+  - id: brd
+    skill: brd-generator
+    summary: Opportunity Packet -> Business Requirement Document
+    inputs: [opportunity_packet]
+    output: brd.md
+    human_gate: true
+
+  - id: prd
+    skill: prd-generator
+    summary: Approved BRD + Packet -> dual-layer PRD (Section 10 w/ Technical Complexity)
+    inputs: [brd.md, opportunity_packet]
+    output: prd.md
+    human_gate: true
+
+  - id: technical_design
+    skill: technical-design-generator
+    summary: PRD -> architecture + workflow diagrams + Component/Build Inventory
+    inputs: [prd.md]
+    outputs: [technical-design.md, component-inventory.md, "diagrams/*.d2"]
+    human_gate: true
+
+  - id: estimation
+    skill: estimation-generator
+    summary: PRD + Component Inventory -> filled Estimation Template (estimate + plan)
+    inputs: [prd.md, component-inventory.md]
+    output: estimation.xlsx        # produced by scripts/fill_template.py inside the skill
+    produces_file: true
+    human_gate: true
+
+# Initial input the user supplies to start a run (path or Notion url).
+start:
+  opportunity_packet: "<path to packet .md, or Notion Opportunity Packet url>"

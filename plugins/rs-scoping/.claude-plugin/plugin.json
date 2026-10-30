@@ -1,0 +1,13 @@
+{
+  "name": "rs-scoping",
+  "version": "4.0.0",
+  "description": "Client notes, transcripts or emails to opportunity packet, BRD, PRD, technical design and a man-day estimate priced against the rate card. The chain that ends in a number. Not for presenting or selling it.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED",
+  "dependencies": [
+    "rs-common"
+  ]
+}

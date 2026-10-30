@@ -1,0 +1,10 @@
+{
+  "name": "rs-research",
+  "version": "4.0.0",
+  "description": "Understand a market, prospect company or competitor before anything is scoped; sharpen discovery questions; turn a vague client complaint into a sharp problem statement. Ends where client-facing documents begin.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,2 @@
+# Block commits that break the skills (well-formedness + estimation fill-script smoke test).
+make verify

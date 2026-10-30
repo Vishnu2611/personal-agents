@@ -1,0 +1,57 @@
+{
+  "name": "@rightshift/skills",
+  "version": "4.0.0",
+  "private": true,
+  "description": "RightShift rs-* Claude plugins — sources under src/plugins/, generated into plugins/ by `make sync`.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IntuitioLabsLLC/rightshift-managed-agents.git"
+  },
+  "files": [
+    "plugins/",
+    "bin/"
+  ],
+  "bin": {
+    "rightshift-skills": "bin/install.js"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "verify": "make verify",
+    "release": "commit-and-tag-version",
+    "release:dry": "commit-and-tag-version --dry-run"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "chore",
+          "ci",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "prompt",
+          "refactor",
+          "revert",
+          "style",
+          "test"
+        ]
+      ]
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
+    "commit-and-tag-version": "^13.1.0",
+    "husky": "^9.1.7"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "prompts": {
+    "gamma-prototype-proposal-deck": "prompts/gamma-prototype-proposal-deck/current/gamma-prototype-proposal-deck-v3.md",
+    "startup-pitch-deck-generator": "prompts/startup-pitch-deck-generator/current/startup-pitch-deck-generator-v2.md",
+    "contract-creator": "prompts/contract-creator/current/contract-creator-v1.md",
+    "pitch-deck-analyzer": "prompts/pitch-deck-analyzer/current/pitch-deck-analyzer-v1.md",
+    "executive-summary-evaluator": "prompts/executive-summary-evaluator/current/executive-summary-evaluator-v1.md"
+  }
+}

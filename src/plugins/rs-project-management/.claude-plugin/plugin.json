@@ -1,0 +1,10 @@
+{
+  "name": "rs-project-management",
+  "version": "4.0.0",
+  "description": "Run sold work: map a PRD into Linear sprints and tickets. Not for deciding what to build or writing code.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

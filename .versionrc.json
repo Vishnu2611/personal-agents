@@ -1,0 +1,159 @@
+{
+  "header": "# Changelog\n\nAll notable changes to the RightShift rs-* plugins, versioned from Conventional Commits.\nThis version is the single source of truth for both the plugin and the npm package (see docs/SOP.md).\n",
+  "bumpFiles": [
+    {
+      "filename": "package.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-research/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-research/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-scoping/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-scoping/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-sales/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-sales/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-content/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-content/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-design/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-design/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-prototype/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-prototype/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-delivery/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-delivery/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-qa/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-qa/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-project-management/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-project-management/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-product/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-product/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-chatbot/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-chatbot/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "src/plugins/rs-common/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-common/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": ".claude-plugin/marketplace.json",
+      "updater": "scripts/bump-marketplace-version.js"
+    },
+    {
+      "filename": "src/plugins/rs-guard/.claude-plugin/plugin.json",
+      "type": "json"
+    },
+    {
+      "filename": "plugins/rs-guard/.claude-plugin/plugin.json",
+      "type": "json"
+    }
+  ],
+  "types": [
+    {
+      "type": "feat",
+      "section": "Features"
+    },
+    {
+      "type": "fix",
+      "section": "Bug Fixes"
+    },
+    {
+      "type": "prompt",
+      "section": "Prompt / Skill changes"
+    },
+    {
+      "type": "docs",
+      "section": "Documentation"
+    },
+    {
+      "type": "refactor",
+      "section": "Refactors"
+    },
+    {
+      "type": "build",
+      "section": "Build / Tooling"
+    },
+    {
+      "type": "ci",
+      "section": "CI"
+    },
+    {
+      "type": "chore",
+      "hidden": true
+    },
+    {
+      "type": "test",
+      "hidden": true
+    },
+    {
+      "type": "style",
+      "hidden": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "rs-chatbot",
+  "version": "4.0.0",
+  "description": "Build a knowledge-grounded chatbot for a client or internally, define its personality rulebook, and specify how it behaves and falls back when it does not know.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

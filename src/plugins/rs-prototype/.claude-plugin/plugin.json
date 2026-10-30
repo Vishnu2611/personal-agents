@@ -1,0 +1,10 @@
+{
+  "name": "rs-prototype",
+  "version": "4.0.0",
+  "description": "Something running or clickable fast: HTML or Next.js prototypes, Spark or Propel engagements, and deciding which prototype features become the MVP. Not for production delivery.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

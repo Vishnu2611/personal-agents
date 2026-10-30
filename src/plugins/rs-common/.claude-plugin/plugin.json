@@ -1,0 +1,10 @@
+{
+  "name": "rs-common",
+  "version": "4.0.0",
+  "description": "Shared utilities other rs-* plugins lean on: D2 diagram rendering and the document formatting standard. Install alongside anything else.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

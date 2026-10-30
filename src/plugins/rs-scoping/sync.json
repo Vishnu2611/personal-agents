@@ -1,0 +1,19 @@
+{
+  "prompts": {
+    "brd-generator": "prompts/01-brd-generator/current/brd-generator-v4.md",
+    "prd-generator": "prompts/02-prd-generator/current/prd-generator-v7.md",
+    "technical-design-generator": "prompts/03-technical-design/current/technical-design-generator-v1.md",
+    "estimation-generator": "prompts/04-estimation-agent/improvements/estimation-agent-v2.md",
+    "opportunity-packet": "prompts/opportunity-packet/current/create-opportunity-packet-v1.md",
+    "feature-pov-narrative": "prompts/feature-pov-narrative/current/feature-pov-narrative-v1.md",
+    "google-estimation-sheet-extractor": "prompts/google-estimation-sheet-extractor/current/google-estimation-sheet-extractor-v1.md"
+  },
+  "copy": [
+    { "from": "src/plugins/rs-scoping/prompts/04-estimation-agent/template/IntuitioLabs - Estimation Template.xlsx", "to": "skills/estimation-generator/resources/estimation-template.xlsx" },
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/brd-generator/resources/document-formatting-standard.md" },
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/prd-generator/resources/document-formatting-standard.md" },
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/technical-design-generator/resources/document-formatting-standard.md" },
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/estimation-generator/resources/document-formatting-standard.md" }
+  ],
+  "post": ["tools/extract_pack.py"]
+}

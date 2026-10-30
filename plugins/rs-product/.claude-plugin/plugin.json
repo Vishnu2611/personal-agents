@@ -1,0 +1,10 @@
+{
+  "name": "rs-product",
+  "version": "4.0.0",
+  "description": "Training course that teaches team leads to turn a client's stated want into a spec a designer and engineer can build from. Training, not production.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,12 @@
+{
+  "prompts": {
+    "test-planner": "prompts/05-test-planner/current/test-planner-v1.md",
+    "test-case-generator": "prompts/06-test-case-generator/current/test-case-generator-v1.md",
+    "test-executor": "prompts/07-test-executor/current/test-executor-v1.md"
+  },
+  "copy": [
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/test-planner/resources/document-formatting-standard.md" },
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/test-case-generator/resources/document-formatting-standard.md" },
+    { "from": "src/standards/document-formatting-standard.md", "to": "skills/test-executor/resources/document-formatting-standard.md" }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "name": "rightshift",
+  "owner": {
+    "name": "IntuitioLabs"
+  },
+  "metadata": {
+    "description": "RightShift Claude skills marketplace",
+    "version": "4.0.0"
+  },
+  "plugins": [
+    {
+      "name": "rs-research",
+      "source": "./plugins/rs-research",
+      "description": "Understand a market, prospect company or competitor before anything is scoped; sharpen discovery questions; turn a vague client complaint into a sharp problem statement. Ends where client-facing documents begin."
+    },
+    {
+      "name": "rs-scoping",
+      "source": "./plugins/rs-scoping",
+      "description": "Client notes, transcripts or emails to opportunity packet, BRD, PRD, technical design and a man-day estimate priced against the rate card. The chain that ends in a number. Not for presenting or selling it."
+    },
+    {
+      "name": "rs-sales",
+      "source": "./plugins/rs-sales",
+      "description": "Win scoped work: proposal and platform decks, startup pitch decks, contracts, outbound campaigns, and review of client-facing material before it goes out. Not for producing the scope."
+    },
+    {
+      "name": "rs-content",
+      "source": "./plugins/rs-content",
+      "description": "Write what is published under the RightShift name: LinkedIn posts, case studies, traction pieces, speaking-engagement campaigns, one-pagers, editorial and client-communication QA, and the voice guide they follow. Not for client deliverables."
+    },
+    {
+      "name": "rs-design",
+      "source": "./plugins/rs-design",
+      "description": "Interface and visual design (SaaS UI in Figma, design reference to CSS spec) and evaluating a page, site or Figma file against its brief. Also brand identity. Not for building it in code."
+    },
+    {
+      "name": "rs-prototype",
+      "source": "./plugins/rs-prototype",
+      "description": "Something running or clickable fast: HTML or Next.js prototypes, Spark or Propel engagements, and deciding which prototype features become the MVP. Not for production delivery."
+    },
+    {
+      "name": "rs-delivery",
+      "source": "./plugins/rs-delivery",
+      "description": "Ship an approved PRD: per-feature specs a coding agent can execute, then design-briefed, prototype-gated, TDD-implemented, QA-verified features shipped as a PR linked to the ticket. Not for prototypes or deciding what to build."
+    },
+    {
+      "name": "rs-qa",
+      "source": "./plugins/rs-qa",
+      "description": "Risk-based test strategy and coverage matrix, executable Gherkin test cases, and Playwright runs against a live application with real verdicts. Not for code review."
+    },
+    {
+      "name": "rs-project-management",
+      "source": "./plugins/rs-project-management",
+      "description": "Run sold work: map a PRD into Linear sprints and tickets. Not for deciding what to build or writing code."
+    },
+    {
+      "name": "rs-product",
+      "source": "./plugins/rs-product",
+      "description": "Training course that teaches team leads to turn a client's stated want into a spec a designer and engineer can build from. Training, not production."
+    },
+    {
+      "name": "rs-chatbot",
+      "source": "./plugins/rs-chatbot",
+      "description": "Build a knowledge-grounded chatbot for a client or internally, define its personality rulebook, and specify how it behaves and falls back when it does not know."
+    },
+    {
+      "name": "rs-common",
+      "source": "./plugins/rs-common",
+      "description": "Shared utilities other rs-* plugins lean on: D2 diagram rendering and the document formatting standard. Install alongside anything else."
+    },
+    {
+      "name": "rs-guard",
+      "source": "./plugins/rs-guard",
+      "description": "Enforced delivery gates as hooks: blocks dangerous git, and PRs without commit-bound receipts (tests passed; on ticket branches, prototype approved and QA with no failing P0). Checks required tools at session start. No dependencies, so the gates stay on."
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills",
+        "ref": "v1.3.1"
+      },
+      "description": "Third-party (Matt Pocock, MIT): engineering skills — /grill-with-docs design interview, /to-spec, /to-tickets, TDD, diagnosing bugs, code review. rs-delivery's design front door."
+    }
+  ],
+  "renames": {
+    "rightshift-doc-gen": "rs-scoping",
+    "chatbot-forge": "rs-chatbot",
+    "delivery-agent": "rs-delivery"
+  }
+}

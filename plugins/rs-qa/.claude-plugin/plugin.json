@@ -1,0 +1,10 @@
+{
+  "name": "rs-qa",
+  "version": "4.0.0",
+  "description": "Risk-based test strategy and coverage matrix, executable Gherkin test cases, and Playwright runs against a live application with real verdicts. Not for code review.",
+  "author": {
+    "name": "IntuitioLabs"
+  },
+  "homepage": "https://github.com/IntuitioLabsLLC/rightshift-managed-agents",
+  "license": "UNLICENSED"
+}

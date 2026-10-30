@@ -1,0 +1,82 @@
+# Document-Generation Pipeline — objectives, artifacts, review gates, and downstream purpose.
+# Render:  d2 --layout elk pipeline-workflow.d2 pipeline-workflow.png
+# Full per-stage detail also lives in pipeline-workflow.md.
+# NOTE: plain "\n" labels are used (not |md| blocks) — D2 measures them reliably; markdown lists clip.
+direction: down
+
+classes: {
+  input:    { style: { fill: "#eef2f7"; stroke: "#64748b"; stroke-width: 2; border-radius: 12; font-size: 15 } }
+  stage:    { style: { fill: "#e8f0fe"; stroke: "#3b6fd6"; stroke-width: 2; border-radius: 12; font-size: 15 } }
+  newstage: { style: { fill: "#f6e9fe"; stroke: "#9333ea"; stroke-width: 3; border-radius: 12; font-size: 15 } }
+  gate:     { shape: diamond; width: 430; height: 175; style: { fill: "#fff4e5"; stroke: "#d97706"; stroke-width: 2; font-size: 15 } }
+  outcome:  { style: { fill: "#e7f6ec"; stroke: "#16a34a"; stroke-width: 2; border-radius: 12; font-size: 15 } }
+}
+
+packet: "📥 OPPORTUNITY PACKET  (discovery input)\nGives: problem · ask · timeline · budget · gaps" { class: input }
+
+brd: "1 · BRD GENERATOR\nObjective: frame the problem at business altitude\nGenerates → BRD: objectives · product narrative\n· scope map · risks" { class: stage }
+g_brd: "🔶 REVIEW GATE\nBusiness owner: scope & product map right?" { class: gate }
+
+prd: "2 · PRD GENERATOR\nObjective: approved scope → dual-layer product spec\nGenerates → PRD: features + Given/When/Then\ncriteria + §9 data model + §10 estimation breakdown" { class: stage }
+g_prd: "🔶 REVIEW GATE\nProduct + eng: coverage 100%? criteria sound?" { class: gate }
+
+# ── Build & commercial track ────────────────────────────────
+build: "BUILD & COMMERCIAL TRACK" {
+  style: { stroke: "#3b6fd6"; stroke-dash: 3; fill: "#f8fafc"; border-radius: 16; font-size: 20 }
+
+  td: "4 · TECHNICAL DESIGN\nObjective: make hidden work countable\nGenerates: system architecture + Component /\nBuild Inventory + sequence diagrams" { class: stage }
+  g_td: "🔶 REVIEW GATE\nEng lead: all components surfaced?" { class: gate }
+
+  est: "3 · ESTIMATION AGENT\nObjective: size effort per component\nGenerates: filled estimation workbook +\nexecution plan + two-tier estimate" { class: stage }
+  g_est: "🔶 REVIEW GATE\nDelivery lead: estimates & spikes defensible?" { class: gate }
+
+  pov: "🎯 FEATURE POV → PROPOSAL\nUsed for: client-facing proposal (Gamma)" { class: outcome }
+}
+
+# ── Quality track (parallel, off the same PRD) ──────────────
+qa: "QUALITY TRACK  (parallel — does not gate build)" {
+  style: { stroke: "#0891b2"; stroke-dash: 3; fill: "#f0fbff"; border-radius: 16; font-size: 20 }
+
+  tp: "5 · TEST PLANNER\nObjective: risk-based QA strategy\nGenerates: Test Strategy & Plan +\nTest Coverage Matrix" { class: stage }
+  g_tp: "🔶 REVIEW GATE\nQA lead: coverage matches PRD risk?" { class: gate }
+
+  tc: "6 · TEST CASE GENERATOR\nObjective: make scenarios executable\nGenerates: concrete test cases +\nGherkin for automatable ones" { class: stage }
+  g_tc: "🔶 REVIEW GATE\nQA: cases faithful? (else DECISION NEEDED)" { class: gate }
+
+  qa_out: "✅ QA EXECUTION\nUsed for: manual + automated runs /\ntest-mgmt import" { class: outcome }
+}
+
+# ── Implementation track (NEW) ──────────────────────────────
+impl: "IMPLEMENTATION TRACK  (NEW — stage 7)" {
+  style: { stroke: "#9333ea"; stroke-dash: 3; fill: "#fdf4ff"; border-radius: 16; font-size: 20 }
+
+  spec: "7 · SPEC GENERATOR\nObjective: repackage PRD into TDD-ready\nspecs (per feature)\nGenerates: requirements.md (EARS) +\ndesign.md + tasks.md (RED/GREEN/REFACTOR) + project rollup" { class: newstage }
+  g_spec: "🔶 REVIEW GATE\nEng: EARS valid? every task traced?" { class: gate }
+
+  build_out: "🤖 TDD IMPLEMENTATION\nUsed for: a coding agent or human implementer\nbuilds each feature from the approved spec, task-by-task" { class: outcome }
+}
+
+# ── Flow (edge labels = the purpose each artifact serves) ───
+packet -> brd: feeds discovery into
+brd -> g_brd
+g_brd -> prd: approved BRD = scope contract
+
+prd -> g_prd
+g_prd -> build.td: features + complexity → design
+g_prd -> qa.tp: acceptance criteria → test strategy
+g_prd -> impl.spec: features → executable specs
+
+build.td -> build.g_td
+build.g_td -> build.est: inventory → size per component
+build.est -> build.g_est
+build.g_est -> build.pov: feature / estimate list → proposal
+
+qa.tp -> qa.g_tp
+qa.g_tp -> qa.tc: coverage matrix → test cases
+qa.tc -> qa.g_tc
+qa.g_tc -> qa.qa_out: approved cases → execution
+
+impl.spec -> impl.g_spec
+impl.g_spec -> impl.build_out: approved specs → build
+
+legend: "LEGEND\n🔵 Generator stage   🟣 New stage (7)\n🔶 Human review gate   🟢 Terminal purpose\nDashed box = parallel track off the approved PRD\nEdge labels = what each artifact is used for" { class: input }

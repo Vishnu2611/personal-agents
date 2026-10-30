@@ -1,0 +1,9 @@
+{
+  "prompts": {
+    "company-research": "prompts/company-research/current/company-research-v1.md",
+    "market-analyzer": "prompts/market-analyzer/current/market-analyzer-v1.md",
+    "competitive-and-market-research": "prompts/competitive-and-market-research/current/competitive-and-market-research-v1.md",
+    "customer-discovery-question-optimizer": "prompts/customer-discovery-question-optimizer/current/customer-discovery-question-optimizer-v1.md",
+    "problem-statement-analyzer": "prompts/problem-statement-analyzer/current/problem-statement-analyzer-v1.md"
+  }
+}
